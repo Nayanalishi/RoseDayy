@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Rose Day 🌹</title>
 
-  <!-- Romantic Elegant Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+  <!-- Romantic elegant font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -25,11 +25,10 @@
     }
 
     .quote {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       max-width: 700px;
       margin: 80px auto 40px;
-      line-height: 1.8;
-      font-style: italic;
+      line-height: 1.7;
     }
 
     .honey-btn {
@@ -40,10 +39,9 @@
     .tap-text {
       font-style: italic;
       margin-top: 5px;
-      opacity: 0.8;
     }
 
-    /* SECOND SLIDE */
+    /* SLIDE 2 */
     .slide2 {
       display: none;
       background: linear-gradient(to bottom right, #ffd1dc, #ffe6ee);
@@ -52,19 +50,13 @@
     }
 
     .slide2 h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       margin-top: 40px;
-      position: relative;
-      z-index: 2;
-      font-weight: 600;
     }
 
     .honey-text {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-bottom: 20px;
-      position: relative;
-      z-index: 2;
-      font-style: italic;
     }
 
     .main-img {
@@ -74,32 +66,31 @@
       margin: 20px auto;
       display: block;
       box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-      position: relative;
-      z-index: 2;
     }
 
     .partner-text {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-top: 15px;
-      position: relative;
-      z-index: 2;
-      font-style: italic;
     }
 
-    /* 💕 MINI HEARTS */
+    /* HEARTS */
     .heart {
       position: absolute;
-      top: -20px;
-      font-size: 14px;
-      opacity: 0.35;
-      color: #e63946;
+      top: -10px;
+      color: rgba(255, 0, 100, 0.35);
       animation: fall linear infinite;
-      z-index: 1;
+      pointer-events: none;
     }
 
     @keyframes fall {
-      from { transform: translateY(0); }
-      to { transform: translateY(120vh); }
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -139,19 +130,12 @@
     function startHearts() {
       const slide = document.getElementById("slide2");
 
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
-        heart.innerHTML = "❤";
-
+        heart.innerHTML = "❤️";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-        heart.style.animationDelay = Math.random() * 3 + "s";
+        heart.style.fontSize = 10 + Math.random() * 18 + "px";
+        heart.style.animationDuration = 4 + Math.random() * 4 + "s";
 
-        slide.appendChild(heart);
-      }
-    }
-  </script>
-
-</body>
-</html>
+        slide
